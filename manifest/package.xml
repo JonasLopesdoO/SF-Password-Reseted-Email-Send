@@ -12,7 +12,7 @@
 		<members>BT_HeaderBackgroundImg__c.Value__c</members>
 		<members>BT_LoginPage__c.Value__c</members>
 		<members>BT_LogoEmailImage__c.Value__c</members>
-		<members>User.FirstLoginDate__c</members>
+		<members>User.LastPasswordChangeDate__c</members>
 		<name>CustomField</name>
 	</types>
     <types>
