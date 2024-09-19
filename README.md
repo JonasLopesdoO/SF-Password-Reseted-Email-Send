@@ -36,7 +36,11 @@ Doing this way we avoid filling the jobs pending queue which has a small limit c
 > ℹ️ **_TIP:_**  As this is a really fast and small consuming process, you can put it to run every minute or every two minutes. I did that and had no blockers. Since the only record that will be locked is the user record that changed the password in the latest minute. For more complex and demanding processes I recommend separating the job in less frequent executions or separate into two different jobs.
 ---
 
+
 ### Considerations:
 Problem with the approach:
 If the user goes fast and set his password as soon as the email arrives and complete the password setup before the time set, he will probably not receive the confirmation password email, because the new field will be first set from null to the `LastPasswordChangeDate`, then to the new changed password date. This is an edge case and to decrease the chance from this to happen we can set the job to run every minute.
 Additional checks and approachs could be done to avoid this problem, but it was not done in this example due to the restriction of the requirement itself.
+
+![Email Sent](https://github.com/JonasLopesdoO/SF-Password-Reseted-Email-Send/blob/main/image/email.png "Email Sent")
+
